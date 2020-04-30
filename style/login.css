@@ -1,0 +1,175 @@
+*{
+    background-color: rgb(250, 250, 250);
+}
+main{
+    width: 350px;
+}
+#login_section{
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 350px;
+}
+/*box1*/
+#login{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(222, 222, 222);
+    height: 380px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+/*logo*/
+#logo_wrap{
+    background-color: rgb(255, 255, 255);
+    height: 120px;
+}
+#logo_wrap img{
+    background-color: rgb(255, 255, 255);
+    margin-top: 30px;
+    width: 180px;
+}
+/*id/pw*/
+#input_wrap{   
+    background-color: rgb(255, 255, 255);
+}
+#input_wrap input{
+    width: 265px;
+    height:36px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 0.5px solid rgb(222, 222, 222);
+    padding-left: 8px;
+}
+/*login button*/
+#login_button_wrap{
+    background-color: rgb(255, 255, 255);
+    height: 46px;
+}
+#login_button_wrap button{
+    background-color: rgb(178, 223, 252);
+    border-style: none;
+    color: white;
+    height: 30px;
+    width: 274px;
+    border-radius: 3px;
+}
+/*or*/
+#or{
+    background-color: rgb(255, 255, 255);
+    color: rgb(156, 152, 160);
+    height: 30px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+}
+#or_sizing{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    width: 274px;
+}
+.line{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(222, 222, 222);
+    width:40%;
+    margin-top: 9px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+#or_text{
+    background-color: rgb(255, 255, 255);
+
+}
+/*fblogin*/
+#fb_login{
+    background-color: rgb(255, 255, 255);
+    color: rgb(56, 81, 133);
+    height: 55px;  
+    margin-top: 20px;
+}
+#fb_login a{
+    background-color: rgb(255, 255, 255);
+}
+
+/*forgot pw*/
+#forgot_pw{
+    margin-top: -15px;
+    background-color: rgb(255, 255, 255);
+    color: 	rgb(88, 124, 158);
+    height: 30px;
+    font-size: 12px;
+}
+#forgot_pw a{
+    background-color: rgb(255, 255, 255);
+}
+
+/*box2*/
+#sign_up{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(222, 222, 222);
+    height: 63px;
+    width:100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#sign_up_text, #sign_up_button{
+    background-color: rgb(255, 255, 255);
+
+    display: -webkit-flex;
+    display: flex;
+    height: 18px;
+    margin:auto;
+    margin-left: 0;
+    margin-right: 0;
+}
+#sign_up_button{
+    padding-left: 2px;
+    font-weight: bold;
+    color: rgb(74, 174, 248);
+}
+
+
+
+/*box3*/
+#app{
+    display: flex;
+    display: -webkit-flex;
+    height: 38px;
+    width:100%;
+}
+#app p{
+    margin: auto;
+    margin-top: 17px;
+    font-size: 14px;
+}
+
+/*box4*/
+#app_button{
+    height: 64px;
+    width:100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+}
+.app_img a{
+
+}
+.app_img img{ 
+    display: -webkit-flex;
+    display: flex;
+    align-self: center;
+    height: 40px;
+    width: 136px;
+}
