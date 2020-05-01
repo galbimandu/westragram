@@ -78,12 +78,9 @@ main{
 }
 .line{
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(222, 222, 222);
+    border-top: 1px solid rgb(222, 222, 222);
     width:40%;
     margin-top: 9px;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
 }
 #or_text{
     background-color: rgb(255, 255, 255);
