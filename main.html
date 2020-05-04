@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <script src="js/main.js"></script>
+        
 
         <!--Navigation Bar Wrap-->
         <div class="nav">
@@ -22,7 +22,7 @@
                 <div class="logo">
                     
                     <!--Instagram logo img-->
-                    <img src="logos/logoinsta.png" alt="instagram logo">
+                    <img class="logo1" src="logos/logoinsta.png" alt="instagram logo">
                 
                 </div>
 
@@ -60,7 +60,7 @@
                         </div>
                     
                         <!--navigation-->
-                        <div id="goto_navigtion">
+                        <div id="goto_navigation">
                             <a>
                                 <img src="logos/explore.png">
                             </a>
@@ -133,23 +133,23 @@
                         <div class="feed_icon_sec">
                             
                             <div class="feed_like_button">
-                                <button >
-                                    <img src="logos/heart.png">
+                                <button id="feed_like_btn">
+                                    <img id="feed_like_img" src="logos/heart.png">
                                 </button>
                             </div>
                             <div class="feed_comment_button">
-                                <button>
+                                <button id="feed_comment_btn">
                                     <img src="logos/feedcomment.png">
                                 </button>
                             </div>
                             <div class="feed_dm_button">
-                                <button>
+                                <button id="feed_dm_btn">
                                     <img src="logos/dm.PNG">
                                 </button>
                             </div>
                             <div class="feed_save_button">
-                                <button>
-                                    <img src="logos/feedbookmark.png">
+                                <button id="feed_save_btn">
+                                    <img id="feed_save_img" src="logos/feedbookmark.png">
                                 </button>
                             </div>
                         </div>
@@ -178,20 +178,20 @@
 
                                 <div class="comment_front">
                                     <div class="comment_id">
-                                        alex_1998
+                                        <span>alex_1998</span>
                                     </div>
                                     <div class="comment_text">
-                                        맛있겠다 ㅠㅠ
+                                        <span>맛있겠다 ㅠㅠ</span>
                                     </div>        
                                 </div>
                         
                                 <div class="comment_like">
-                                    <button>
-                                        <img src="logos/heart.png">
+                                    <button class="comment_like_btn">
+                                        <img class="comment_like_img" src="logos/heart.png">
                                     </button>
                                 </div>
                             </div>
-                        
+
                         </div>
                         
                         <!--Feed upload time section-->
@@ -627,7 +627,7 @@
 
         
         </div>
-    
+        <script src="js/main.js"></script>
     </body>
 
 </html>

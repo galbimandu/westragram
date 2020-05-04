@@ -36,10 +36,10 @@ main{
     width: 180px;
 }
 /*id/pw*/
-#input_wrap{   
+.input_wrap{   
     background-color: rgb(255, 255, 255);
 }
-#input_wrap input{
+.input_wrap input{
     width: 265px;
     height:36px;
     margin-bottom: 5px;
