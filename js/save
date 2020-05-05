@@ -22,7 +22,6 @@ let comment_like_img = document.querySelectorAll(".comment_like_img");
 /*add elements that have the pointer cursor when hovered over*/
 let parts = [comment_like_btn, feed_comment_btn,feed_dm_btn,feed_save_btn,instagram_logo,goto_home,goto_likes,goto_dm,goto_navigation,goto_profile,feed_like_btn];
 
-/*function that inserts new values into all the variables*/
 function refresh_variables(){
 
     instagram_logo = null;
@@ -56,7 +55,6 @@ function refresh_variables(){
     comment_like_img = document.querySelectorAll(".comment_like_img");
 }
 
-/*changes the hover cursor for elements in the parts array*/
 function pointer_cursor(elements){
     elements.forEach(element => {
         if(element.length>1){
@@ -74,7 +72,7 @@ function pointer_cursor(elements){
 pointer_cursor(parts);
 
 
-/*image replacer function for click events*/
+
 function replace_img(image1, image2, element){
     if(element.src.includes(image1)){
         element.src = image2;
@@ -150,5 +148,5 @@ const comment_sec = document.querySelector(".feed_comment_sec");
 comment_sec.appendChild(tester);
 
 void tester.offsetWidth;
-//refresh_variables();
+refresh_variables();
 //apply();

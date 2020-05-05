@@ -22,7 +22,6 @@ let comment_like_img = document.querySelectorAll(".comment_like_img");
 /*add elements that have the pointer cursor when hovered over*/
 let parts = [comment_like_btn, feed_comment_btn,feed_dm_btn,feed_save_btn,instagram_logo,goto_home,goto_likes,goto_dm,goto_navigation,goto_profile,feed_like_btn];
 
-/*function that inserts new values into all the variables*/
 function refresh_variables(){
 
     instagram_logo = null;
@@ -56,7 +55,6 @@ function refresh_variables(){
     comment_like_img = document.querySelectorAll(".comment_like_img");
 }
 
-/*changes the hover cursor for elements in the parts array*/
 function pointer_cursor(elements){
     elements.forEach(element => {
         if(element.length>1){
@@ -74,7 +72,7 @@ function pointer_cursor(elements){
 pointer_cursor(parts);
 
 
-/*image replacer function for click events*/
+
 function replace_img(image1, image2, element){
     if(element.src.includes(image1)){
         element.src = image2;
@@ -86,6 +84,9 @@ function replace_img(image1, image2, element){
     void element.offsetWidth; // trigger a DOM reflow
     element.classList.add("animate");
 }
+
+
+
 
 
 function apply(){
@@ -110,19 +111,19 @@ for(let i=0;i<comment_like_btn.length;i++){
 function remove(){
     /*change the color of the like button and bookmark button of the feed*/
 for(let i = 0; i<feed_like_btn.length;i++){
-    feed_like_btn[i].removeEventListener("click",function(){
-        replace_img("logos/heart.png","logos/redlike.png",feed_like_img[i]);
-    });
-    feed_save_btn[i].removeEventListener("click",function(){
-        replace_img("logos/feedbookmark.png","logos/blacksaved.png",feed_save_img[i]);
-    });
+    let clone = feed_like_btn[i].cloneNode(true);
+    feed_like_btn[i] = null;
+    feed_like_btn[i] = clone;
+    clone = feed_save_btn[i].cloneNode(true);
+    feed_save_btn[i] = null;
+    feed_save_btn[i] = clone;
 }
 
 /*change the color of the like button in the feed comment*/
 for(let i=0;i<comment_like_btn.length;i++){
-    comment_like_btn[i].removeEventListener("click",function(){
-        replace_img("logos/heart.png","logos/redlike.png",comment_like_img[i]);
-    });
+    let clone = comment_like_btn[i].cloneNode(true);
+    comment_like_btn[i] = null;
+    comment_like_btn[i] = clone;
 }
 }
 
