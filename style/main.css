@@ -303,6 +303,11 @@ body {
                     color: rgba(var(--f75,38,38,38),1);
                     margin-bottom: 8px;
                 }
+
+                    .comment:first-of-type{
+                        display: none;
+                    }
+
                     .comment{
                         display: flex;
                         display: -webkit-flex;
