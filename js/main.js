@@ -22,39 +22,6 @@ let comment_like_img = document.querySelectorAll(".comment_like_img");
 /*add elements that have the pointer cursor when hovered over*/
 let parts = [comment_like_btn, feed_comment_btn,feed_dm_btn,feed_save_btn,instagram_logo,goto_home,goto_likes,goto_dm,goto_navigation,goto_profile,feed_like_btn];
 
-/*function that inserts new values into all the variables*/
-function refresh_variables(){
-
-    instagram_logo = null;
-    goto_home = null;
-    goto_dm = null;
-    goto_navigation = null;
-    goto_likes = null;
-    goto_profile = null;
-    feed_like_btn = null;
-    feed_like_img = null;
-    feed_comment_btn = null;
-    feed_dm_btn = null;
-    feed_save_btn = null;
-    feed_save_img =null;
-    comment_like_btn = null;
-    comment_like_img = null;
-
-    instagram_logo = document.querySelector(".logo1");
-    goto_home = document.querySelector("#goto_home");
-    goto_dm = document.querySelector("#goto_dm");
-    goto_navigation = document.querySelector("#goto_navigation");
-    goto_likes = document.querySelector("#goto_likes");
-    goto_profile = document.querySelector("#goto_profile");
-    feed_like_btn = document.querySelectorAll(".feed_like_btn");
-    feed_like_img = document.querySelectorAll(".feed_like_img");
-    feed_comment_btn = document.querySelectorAll(".feed_comment_btn");
-    feed_dm_btn = document.querySelectorAll(".feed_dm_btn");
-    feed_save_btn = document.querySelectorAll(".feed_save_btn");
-    feed_save_img =document.querySelectorAll('.feed_save_img');
-    comment_like_btn = document.querySelectorAll(".comment_like_btn");
-    comment_like_img = document.querySelectorAll(".comment_like_img");
-}
 
 /*changes the hover cursor for elements in the parts array*/
 function pointer_cursor(elements){
@@ -87,8 +54,6 @@ function replace_img(image1, image2, element){
     element.classList.add("animate");
 }
 
-
-function apply(){
     /*change the color of the like button and bookmark button of the feed*/
 for(let i = 0; i<feed_like_btn.length;i++){
     feed_like_btn[i].addEventListener("click",function(){
@@ -106,31 +71,6 @@ for(let i=0;i<comment_like_btn.length;i++){
     });
 }
 
-}
-function remove(){
-    /*change the color of the like button and bookmark button of the feed*/
-for(let i = 0; i<feed_like_btn.length;i++){
-    feed_like_btn[i].removeEventListener("click",function(){
-        replace_img("logos/heart.png","logos/redlike.png",feed_like_img[i]);
-    });
-    feed_save_btn[i].removeEventListener("click",function(){
-        replace_img("logos/feedbookmark.png","logos/blacksaved.png",feed_save_img[i]);
-    });
-}
-
-/*change the color of the like button in the feed comment*/
-for(let i=0;i<comment_like_btn.length;i++){
-    comment_like_btn[i].removeEventListener("click",function(){
-        replace_img("logos/heart.png","logos/redlike.png",comment_like_img[i]);
-    });
-}
-}
-
-apply();
-console.log('1');
-remove();
-
-console.log('2');
 function create_comment(id,text){
     let comment = document.querySelector(".comment");
     let outline = comment.cloneNode(true);
@@ -140,15 +80,48 @@ function create_comment(id,text){
     outline_id.innerText = id;
 
     outline_text.innerText = text;
+
+    let outline_btn = outline.querySelector(".comment_like_btn");
+    let outline_img = outline.querySelector(".comment_like_img");
+
+    outline_btn.addEventListener("click",function(){
+        replace_img("logos/heart.png","logos/redlike.png",outline_img);
+    });
+
     return outline;
 }
 
-let tester = create_comment("min","does this work?");
+const comment_input = document.querySelectorAll(".comment_input");
+const comment_btn = document.querySelectorAll(".comment_btn");
+const comment_sec = document.querySelectorAll(".feed_comment_sec");
+for(let i=0;i<comment_input.length;i++){
+    comment_input[i].addEventListener("keyup", function(e){
+        if(comment_input[i].value.length>0){
+            comment_btn[i].style.opacity = 1;
+            if(e.keyCode === 13){
+                comment_sec[i].appendChild(create_comment("min", comment_input[i].value));
+                comment_input[i].value = null;
+                comment_btn[i].style.opacity = 0.3;
+            }
+        }else{
+            comment_btn[i].style.opacity = 0.3;
+        }
+        
+    });
+    comment_btn[i].addEventListener("click", function(){
+        if(comment_input[i].value.length>0){
+            comment_sec[i].appendChild(create_comment("min", comment_input[i].value));
+            comment_input[i].value = null;
+        }
+        
+    });
+}
 
-const comment_sec = document.querySelector(".feed_comment_sec");
+// let tester = create_comment("min","does this work?");
 
-comment_sec.appendChild(tester);
+// const comment_sec = document.querySelector(".feed_comment_sec");
 
-void tester.offsetWidth;
-//refresh_variables();
-//apply();
+// comment_sec.appendChild(tester);
+function search_focus(){
+    
+}
