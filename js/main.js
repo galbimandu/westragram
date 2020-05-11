@@ -1,26 +1,26 @@
-let instagram_logo = document.querySelector(".logo1");
+const instagram_logo = document.querySelector(".logo1");
 
-let goto_home = document.querySelector("#goto_home");
-let goto_dm = document.querySelector("#goto_dm");
-let goto_navigation = document.querySelector("#goto_navigation");
-let goto_likes = document.querySelector("#goto_likes");
-let goto_profile = document.querySelector("#goto_profile");
-
-
+const goto_home = document.querySelector("#goto_home");
+const goto_dm = document.querySelector("#goto_dm");
+const goto_navigation = document.querySelector("#goto_navigation");
+const goto_likes = document.querySelector("#goto_likes");
+const goto_profile = document.querySelector("#goto_profile");
 
 
-let feed_like_btn = document.querySelectorAll(".feed_like_btn");
+
+
+const feed_like_btn = document.querySelectorAll(".feed_like_btn");
 let feed_like_img = document.querySelectorAll(".feed_like_img");
-let feed_comment_btn = document.querySelectorAll(".feed_comment_btn");
-let feed_dm_btn = document.querySelectorAll(".feed_dm_btn");
-let feed_save_btn = document.querySelectorAll(".feed_save_btn");
+const feed_comment_btn = document.querySelectorAll(".feed_comment_btn");
+const feed_dm_btn = document.querySelectorAll(".feed_dm_btn");
+const feed_save_btn = document.querySelectorAll(".feed_save_btn");
 let feed_save_img =document.querySelectorAll('.feed_save_img');
 
-let comment_like_btn = document.querySelectorAll(".comment_like_btn");
+const comment_like_btn = document.querySelectorAll(".comment_like_btn");
 let comment_like_img = document.querySelectorAll(".comment_like_img");
 
 /*add elements that have the pointer cursor when hovered over*/
-let parts = [comment_like_btn, feed_comment_btn,feed_dm_btn,feed_save_btn,instagram_logo,goto_home,goto_likes,goto_dm,goto_navigation,goto_profile,feed_like_btn];
+const parts = [comment_like_btn, feed_comment_btn,feed_dm_btn,feed_save_btn,instagram_logo,goto_home,goto_likes,goto_dm,goto_navigation,goto_profile,feed_like_btn];
 
 
 /*changes the hover cursor for elements in the parts array*/
@@ -35,7 +35,6 @@ function pointer_cursor(elements){
         }
     });
 }
-
 
 
 pointer_cursor(parts);
@@ -72,8 +71,8 @@ for(let i=0;i<comment_like_btn.length;i++){
 }
 
 function create_comment(id,text){
-    let comment = document.querySelector(".comment");
-    let outline = comment.cloneNode(true);
+    const comment = document.querySelector(".comment");
+    const outline = comment.cloneNode(true);
     let outline_id = outline.querySelector(".comment_id").querySelector("span");
 
     let outline_text = outline.querySelector(".comment_text").querySelector("span");
@@ -81,8 +80,8 @@ function create_comment(id,text){
 
     outline_text.innerText = text;
 
-    let outline_btn = outline.querySelector(".comment_like_btn");
-    let outline_img = outline.querySelector(".comment_like_img");
+    const outline_btn = outline.querySelector(".comment_like_btn");
+    const outline_img = outline.querySelector(".comment_like_img");
 
     outline_btn.addEventListener("click",function(){
         replace_img("logos/heart.png","logos/redlike.png",outline_img);
@@ -91,9 +90,9 @@ function create_comment(id,text){
     return outline;
 }
 
-const comment_input = document.querySelectorAll(".comment_input");
-const comment_btn = document.querySelectorAll(".comment_btn");
-const comment_sec = document.querySelectorAll(".feed_comment_sec");
+let comment_input = document.querySelectorAll(".comment_input");
+let comment_btn = document.querySelectorAll(".comment_btn");
+let comment_sec = document.querySelectorAll(".feed_comment_sec");
 for(let i=0;i<comment_input.length;i++){
     comment_input[i].addEventListener("keyup", function(e){
         if(comment_input[i].value.length>0){
@@ -112,12 +111,13 @@ for(let i=0;i<comment_input.length;i++){
         if(comment_input[i].value.length>0){
             comment_sec[i].appendChild(create_comment("min", comment_input[i].value));
             comment_input[i].value = null;
+            comment_btn[i].style.opacity = 0.3;
         }
         
     });
 }
 
-// let tester = create_comment("min","does this work?");
+// const tester = create_comment("min","does this work?");
 
 // const comment_sec = document.querySelector(".feed_comment_sec");
 
