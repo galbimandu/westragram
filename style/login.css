@@ -4,6 +4,9 @@
 main{
     width: 350px;
 }
+input:focus{
+    outline: none;
+}
 #login_section{
     
     position: fixed;
